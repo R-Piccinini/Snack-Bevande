@@ -55,15 +55,14 @@ public class Distributore {
 	public void visualizzaProdotti() {
 		for (int i = 0; i < elencoProdotti.length; i++) {
 			Prodotto stampaProdotto = elencoProdotti[i];
+			
 			if (stampaProdotto instanceof Bevanda) {
-				Bevanda stampaBevanda = (Bevanda) stampaProdotto;
-				String zuccherata = stampaBevanda.isZuccherata() ? "zuccherata" : "Senza zucchero";
-				System.out.println(i+" Bevanda: " + stampaBevanda.getNome() + " Zucchero: " + zuccherata + " Costo: "
-						+ stampaBevanda.getCosto() + " Quantità: " + stampaBevanda.getQnt());
+				String zuccherata = ((Bevanda) stampaProdotto).isZuccherata() ? "zuccherata" : "Senza zucchero";
+				System.out.println(i+" Bevanda: " + stampaProdotto.getNome() + " Zucchero: " + zuccherata + " Costo: "
+						+ stampaProdotto.getCosto() + " Quantità: " + stampaProdotto.getQnt());
 			} else if (stampaProdotto instanceof Snack) {
-				Snack stampaSnack = (Snack) stampaProdotto;
-				System.out.println(i+" Snack: " + stampaSnack.getNome() + " grammi: " + stampaSnack.getGrammi()
-						+ " Costo: " + stampaSnack.getCosto() + " Quantità: " + stampaSnack.getQnt());
+				System.out.println(i+" Snack: " + stampaProdotto.getNome() + " grammi: " + ((Snack) stampaProdotto).getGrammi()
+						+ " Costo: " + stampaProdotto.getCosto() + " Quantità: " + stampaProdotto.getQnt());
 			}
 		}
 	}

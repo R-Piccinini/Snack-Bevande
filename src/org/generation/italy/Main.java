@@ -43,7 +43,7 @@ public class Main {
 
 		} while (!(risposta.equals("4")));
 		System.out.println("Arrivederci");
-
+		sc.close();
 	}
 
 }
